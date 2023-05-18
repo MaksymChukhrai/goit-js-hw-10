@@ -12,13 +12,16 @@
     "url": "git+https://github.com/MaksymChukhrai/goit-js-hw-10.git"
   },
   "keywords": [],
-  "author": "Maksym Chukhrai <alexander.repeta@gmail.com>",
+  "author": "Maksym Chukhrai <m.chukhrai@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MaksymChukhrai/goit-js-hw-10/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "lodash.debounce": "^4.0.8",
+    "modern-normalize": "^1.1.0",
+    "node-fetch": "^3.3.1",
+    "notiflix": "^3.2.6"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

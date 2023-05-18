@@ -18,3 +18,43 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+.country-card {
+  width: 300px;
+  height: 400px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.country-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.country-card p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.country-card img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+ul.country-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul.country-list li {
+  margin-bottom: 5px;
+}
+
+ul.country-list li img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
