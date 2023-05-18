@@ -19,7 +19,9 @@ function handleSearch() {
   fetchCountries(searchValue)
     .then(data => {
       if (data.length > 10) {
-        showNotification('Too many matches found. Please enter a more specific name.');
+        showNotification(
+          'Too many matches found. Please enter a more specific name.'
+        );
       } else if (data.length >= 2 && data.length <= 10) {
         showCountryList(data);
       } else if (data.length === 1) {
@@ -30,7 +32,9 @@ function handleSearch() {
     })
     .catch(error => {
       console.log('An error occurred:', error);
-      showNotification('An error occurred while fetching data. Please try again.');
+      showNotification(
+        'An error occurred while fetching data. Please try again.'
+      );
     });
 }
 
@@ -57,11 +61,15 @@ function showCountryInfo(country) {
   const countryCard = document.createElement('div');
   countryCard.classList.add('country-card');
   countryCard.innerHTML = `
-    <img src="${country.flags.svg}" alt="${country.name.official}" width="100" height="70">
+    <img src="${country.flags.svg}" alt="${
+    country.name.official
+  }" width="100" height="70">
     <h3>${country.name.official}</h3>
     <p><strong>Capital:</strong> ${country.capital}</p>
     <p><strong>Population:</strong> ${country.population}</p>
-    <p><strong>Languages:</strong> ${Object.values(country.languages).join(', ')}</p>
+    <p><strong>Languages:</strong> ${Object.values(country.languages).join(
+      ', '
+    )}</p>
   `;
 
   countryList.innerHTML = '';
