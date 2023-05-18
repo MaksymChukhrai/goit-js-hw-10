@@ -25,7 +25,7 @@ function handleSearch() {
       } else if (data.length === 1) {
         showCountryInfo(data[0]);
       } else {
-        showNotification('Oops, there is no country with that name');
+        showNotification('Country not found.');
       }
     })
     .catch(error => {
@@ -44,7 +44,7 @@ function showCountryList(countries) {
   countries.forEach(country => {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
-      <img src="${country.flags.svg}" alt="${country.name.official}" width="40" height="30">
+      <img src="${country.flags.svg}" alt="${country.name.official}" width="30" height="20">
       ${country.name.official}
     `;
     countryList.appendChild(listItem);
