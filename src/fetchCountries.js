@@ -4,12 +4,12 @@ export function fetchCountries(name) {
   return fetch(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
+      // console.log(data);
 
       return data;
     })
     .catch(error => {
-      console.log('Произошла ошибка при выполнении запроса:', error);
+      // console.log('An error occurred while executing the request:', error);
       throw error;
     });
 }

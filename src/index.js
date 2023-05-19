@@ -17,25 +17,24 @@ function handleSearch() {
   }
 
   fetchCountries(searchValue)
-    .then(data => {
-      if (data.length > 10) {
-        showNotification(
-          'Too many matches found. Please enter a more specific name.'
-        );
-      } else if (data.length >= 2 && data.length <= 10) {
-        showCountryList(data);
-      } else if (data.length === 1) {
-        showCountryInfo(data[0]);
-      } else {
-        showNotification('Oops, there is no country with that name');
-      }
-    })
-    .catch(error => {
-      console.log('An error occurred:', error);
-      showNotification(
-        'An error occurred while fetching data. Please try again.'
-      );
-    });
+  .then(data => {
+    if (data.length > 10) {
+      clearResults();
+      throw new Error('Too many matches found. Please enter a more specific name.');
+    } else if (data.length >= 2 && data.length <= 10) {
+      showCountryList(data);
+    } else if (data.length === 1) {
+      showCountryInfo(data[0]);
+    } else {
+      clearResults();
+      throw new Error('Oops, there is no country with that name');
+    }
+  })
+  .catch(error => {
+    console.log('An error occurred:', error);
+    showNotification(error.message);
+  });
+
 }
 
 function showNotification(message) {
