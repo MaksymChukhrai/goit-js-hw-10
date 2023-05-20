@@ -7,10 +7,10 @@ const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 let timeoutId; // Додана змінна для управління таймаутом
 
-searchInput.addEventListener('input', debounce(handleSearch, 500));
+searchInput.addEventListener('input', debounce(handleSearch, 500)); // Увеличена задержка до 500 мс
 
 function handleSearch() {
-  clearTimeout(timeoutId);// Скидаємо попередній timeout
+  clearTimeout(timeoutId); // Скидаємо попередній timeout
 
   const searchValue = searchInput.value.trim();
 
@@ -39,7 +39,7 @@ function handleSearch() {
         console.log('An error occurred:', error);
         showNotification(error.message);
       });
-  }, 1500);//При базі, збільшуємо або зменшуємо інтервал
+  }, 500);
 }
 
 function showNotification(message) {
